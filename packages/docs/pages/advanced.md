@@ -23,7 +23,7 @@ Three important properties/arguments in `ChainProvider`/`WalletManager` are `cha
 
 ### MainWalletBase
 
-`MainWalletBase` is meant to provide a base implementation and unified interface for all different wallets like `keplr-extension`, `keplr-mobile` and `cosmostation-extension`. Basically every wallet has it's own `MainWallet` class, which extends `MainWalletBase` in common, but with `WalletClient` implemented in different ways. In this way `WalletManager` can handle all different wallets no matter how different they're inside.
+`MainWalletBase` is meant to provide a base implementation and unified interface for all different wallets like `keplr-extension`, `keplr-mobile` and `cosmostation-extension`. Basically every wallet has its own `MainWallet` class, which extends `MainWalletBase` in common, but with `WalletClient` implemented in different ways. In this way `WalletManager` can handle all different wallets no matter how different they're inside.
 
 > For practice you can take a look at [How to Integrate New Wallets into CosmosKit](/integrating-wallets/adding-new-wallets)
 
@@ -40,7 +40,7 @@ Three important properties/arguments in `ChainProvider`/`WalletManager` are `cha
 
 ### ChainWalletBase
 
-When you're trying to connect to a wallet, you always need to provide a target chain name so that the wallet knows what to response. So `ChainWalletBase` is the class actually being used for real connection. It's the finest grain of functionality that with chain specified and also wallet specified.
+When you're trying to connect to a wallet, you always need to provide a target chain name so that the wallet knows what to respond. So `ChainWalletBase` is the class actually being used for real connection. It's the finest grain of functionality that with chain specified and also wallet specified.
 
 We're separating `MainWalletBase` and `ChainWalletBase` because it's clearer to put some common properties like `wallet client` and `env` in the `MainWalletBase` to enable
 centralized management and distribution (events `broadcast_client` and `broadcast_env`), and put only chain specified functionalities in `ChainWalletBase`.
